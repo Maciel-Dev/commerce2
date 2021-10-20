@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    
+    <h2 style="position: relative; left: 40%;">Create Listing</h2>
+
+    {% if errou %}
+        <h2>Erro</h2>
+    {% endif %}
+
+    <div style="position: relative; left: 12%;">
+    <form method="post">{% csrf_token %}
+        <label style="position: relative; top: 100%; left: 20%;" for="title" name="title">Title:</label><br>
+        <input style="position: relative; top: 45%; left: 20%; width: 30%;" type="text" id="title" name="title"><br><br>
+
+        <label style="position: relative; top: 100%; left: 20%;" for="desc" name="description">Description:</label><br>
+        <input style="position: relative; top: 45%; left: 20%; width: 30%; height: 200px;" type="text" id="desc" name="desc"><br><br>
+
+        <label style="position: relative; top: 100%; left: 20%;" for="category" name="category">Category:</label><br>
+        <input style="position: relative; top: 45%; left: 20%; width: 30%;" type="text" id="category" name="category"><br><br>
+        
+        <label style="position: relative; top: 100%; left: 20%;" for="bidInitial" name= "initialBid">Initial Bid:</label><br>
+        <input style="position: relative; top: 45%; left: 20%; width: 30%;" type="number" id="bidInitial" name="bidInitial"><br><br>
+        
+        <label style="position: relative; top: 100%; left: 20%;" for="image" name="imageLink">Image Link:</label><br>
+        <input style="position: relative; top: 45%; left: 20%; width: 30%;" type="text" id="image" name="image"><br><br>
+
+        <input style="position: relative; left: 45.8%;" type="submit" name="enviar" id="enviar">
+    </form>
+
+    
+{% endblock %}

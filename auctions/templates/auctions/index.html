@@ -1,0 +1,29 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <div style="position: relative; left: 45%;">
+    <h2 style="position: relative;left: 2%;">Active Listings</h2>
+
+    <br>
+
+    {% for item in items %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-text">
+            <p class="card-text"><b>Title: </b> {{ item.title }} </p>
+        </div>
+        <img class="card-img-top" src="{{ item.imageLink }}" alt="Card image cap">
+        <div class="card-body">
+          <p class="card-text"><b>Category: </b> {{ item.category }} </p>
+          <p class="card-text"><b>Initial Bid: </b> {{ item.initialBid }} </p>
+          <a href="{{item.title}}-{{item.id}}">Click</a>
+          
+          
+        </div>
+      </div>
+      <br>
+      {% endfor %}
+    </div>
+    
+
+
+{% endblock %}
